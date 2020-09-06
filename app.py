@@ -109,6 +109,10 @@ def _404():
     # return custom 404 page  with 404 status code
     return make_response(render_template("404.html"), 404)
 
+@app.route("/", methods=["get"])
+def home():
+    # redirect to homepage
+    return flask.redirect("https://imneonizer.github.io/Link-Shrink-UI/")
 
 if __name__ == "__main__":
     app.run(debug=config['DEBUG'], host=config['HOST'], port=config['PORT'])
